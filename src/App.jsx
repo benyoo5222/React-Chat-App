@@ -9,7 +9,7 @@ class App extends Component {
 
     this.state = {
 
-      currentUser: { name: "Bob" }, // optional. if currentUser is not defined, it means the user is Anonymous
+      currentUser: { name: "Bob", options: {} }, // optional. if currentUser is not defined, it means the user is Anonymous
 
       messages: [
         {
@@ -42,10 +42,8 @@ componentDidMount() {
 }
 
 addMessage = (newmessage) => {
-  const newmessageobj = this.state.messages;
-  newmessageobj.push(newmessage);
-
-  this.setState(newmessageobj);
+  const messages = [...this.state.messages, newmessage];
+  this.setState({messages});
 }
 
   render() {
