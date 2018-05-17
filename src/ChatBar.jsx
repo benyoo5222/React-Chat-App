@@ -7,15 +7,23 @@ class ChatBar extends Component {
     if (event.key === 'Enter') {
 
       const newmessage = {
-        username: this.props.user,
-        content: event.target.value,
-        id: Math.floor((Math.random() * 100) + 1)
+        content: event.target.value
       }
 
       this.props.addmessage(newmessage);
 
       event.target.value ="";
+
     }
+
+  }
+
+  findOutUser = ( event ) => {
+
+    //console.log(event.target.value);
+
+    this.props.setuser(event.target.value);
+
 
   }
 
@@ -23,7 +31,7 @@ class ChatBar extends Component {
 
     return (
       <footer className="chatbar">
-        <input className="chatbar-username" placeholder= {this.props.user}  />
+        <input className="chatbar-username" placeholder= "User" onBlur = {this.findOutUser} />
         <input className="chatbar-message" placeholder="Type a message and hit ENTER" onKeyPress= { this.handleUserInput } />
       </footer>
     )

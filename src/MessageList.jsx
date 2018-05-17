@@ -3,9 +3,9 @@ import Message from './Message.jsx';
 
 class MessageList extends Component {
   render () {
-    const eachmessage = this.props.message.map(each => (
-      <Message key= {each.id} messagecontent = {each} />
-    ))
+    const eachmessage = this.props.messages.map( (each) => (
+      <Message name = {each.username} key= {each.id} messagecontent = {each.content} />
+    ));
     return (
       <main className= "messages">
         {eachmessage}
