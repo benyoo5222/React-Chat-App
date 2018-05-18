@@ -9,7 +9,8 @@ class App extends Component {
 
     this.state = {
       currentUser: { name:"" }, // optional. if currentUser is not defined, it means the user is Anonymous
-      messages: []
+      messages: [],
+      members: 0
     }
   }
 
@@ -36,6 +37,8 @@ componentDidMount() {
     } else if (parsedMessage.type === "incomingNotification") {
       const newArray = [...this.state.messages, parsedMessage];
       this.setState({ messages: newArray });
+    } else {
+      this.setState({members: incomingMessage.data})
     }
   });
 }
@@ -68,7 +71,7 @@ setUser = (theuser) => {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar members={this.state.members}/>
         <MessageList state= { this.state }/>
         <ChatBar setuser = {this.setUser} user = { this.state.currentUser.name } addmessage ={this.addMessage}/>
       </div>
