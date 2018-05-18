@@ -23,9 +23,7 @@ class ChatBar extends Component {
   }
 
   findOutUser = ( event ) => {
-    if(event.key === 'Enter') {
       this.props.setuser(this.state.username);
-    }
   }
 
   handleChange = (event) => {
@@ -36,7 +34,7 @@ class ChatBar extends Component {
 
     return (
       <footer className="chatbar">
-        <input className="chatbar-username" placeholder= "User" value={this.state.username} onChange={this.handleChange} name="username" onKeyPress = {this.findOutUser} />
+        <input className="chatbar-username" placeholder= "User" value={this.state.username} onChange={this.handleChange} name="username" onBlur = {this.findOutUser} />
         <input
           className="chatbar-message"
           placeholder="Type a message and hit ENTER"

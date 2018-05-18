@@ -1,45 +1,50 @@
-React Boilerplate
-=====================
+# Chatty App
 
-A minimal and light dev environment for ReactJS.
+Chatty App is a single page web app that allows users to send messages back and forth. The app was built using React, Websocket, Express, and Node.
 
-### Usage
+## Final Product
 
-Clone the boilerplate and create your own git repo.
+!["Screenshot of ChattyApp"]
 
-```
-git clone git@github.com:lighthouse-labs/react-simple-boilerplate.git
-cd react-simple-boilerplate
-git remote rm origin
-git remote add origin [YOUR NEW REPOSITORY]
-# Manually update your package.json file
-```
+## Dependencies
 
-Install the dependencies and start the server.
+- React
+- Babel
+- CSS-Loader
+- ES Lint
+- Node Sass
+- Webpack
+- Websocket
+- SockJs
+- Style-Loader
+- Express
+- UUID
 
-```
-npm install
-npm start
-open http://localhost:3000
-```
+## Getting Started
 
-### Static Files
+- Install dependencies using 'npm install' command on the main directory.
+- Intall dependencies using 'npm install' inside the chatty_server directory.
+- Type in your username on the left input field and write a message you want to send to other users.
 
-You can store static files like images, fonts, etc in the `build` folder.
+## Key Features
 
-For example, if you copy a file called my_image.png into the build folder you can access it using `http://localhost:3000/build/my_image.png`.
+1. Once you type in your username and leave the input field, a notification will pop up saying "anonymous changed their name to".
 
-### Linting
+!["Screenshot of ChattyApp username"]
+!["Screenshot of ChattyApp username notification"]
 
-This boilerplate project includes React ESLint configuration.
+2. Any message that the user types in is broadcasted to all the users on this chat app.
 
-```
-npm run lint
-```
+!["Screenshot of ChattyApp messages"]
+!["Screenshot of ChattyApp messages"]
 
-### Dependencies
+3. The top right corner shows the active members of this chat. If another person joins or leaves, this will reflect the active members in real time.
 
-* React
-* Webpack
-* [babel-loader](https://github.com/babel/babel-loader)
-* [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
+!["Screenshot of ChattyApp member count"]
+!["Screenshot of ChattyApp member count"]
+!["Screenshot of ChattyApp member count"]
+
+4. If a user changes their username, another notification will popup notifying everyone that the user changed their name.
+
+!["Screenshot of ChattyApp notification"]
+!["Screenshot of ChattyApp notification"]

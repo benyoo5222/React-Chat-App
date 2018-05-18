@@ -56,7 +56,10 @@ addMessage = (newmessage) => {
 
 setUser = (theuser) => {
 
-  if (theuser !== this.state.currentUser.name){
+  if (theuser !== this.state.currentUser.name && this.state.currentUser.name !== ""){
+    const changeuser = JSON.stringify({type: "postNotification", content: `${this.state.currentUser.name} changed their name to ${theuser}`});
+    this.socket.send(changeuser);
+  } else if (this.state.currentUser.name === "" && theuser !== "") {
     const changeuser = JSON.stringify({type: "postNotification", content: `Anonymous changed their name to ${theuser}`});
     this.socket.send(changeuser);
   }
